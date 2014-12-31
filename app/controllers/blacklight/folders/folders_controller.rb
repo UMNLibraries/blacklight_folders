@@ -134,7 +134,7 @@ module Blacklight::Folders
 	    end
 
       def create_params
-        params.require(:folder).permit(:name, :description, :visibility, items_attributes: [:id, :position, :_destroy, :folder_id])
+        params.require(:folder).permit(:name, :description, :visibility, items_attributes: [:id, :position, :_destroy, :folder_id, :description])
       end
 
       def clear_session_search_params

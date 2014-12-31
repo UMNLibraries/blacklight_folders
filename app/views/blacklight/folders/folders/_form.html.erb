@@ -58,9 +58,14 @@
           <span class="pull-left hidden dd-handle glyphicon glyphicon-resize-vertical"></span>
           <%= i.text_field :position, class: 'form-control position-input' %>
         </div>
-        <div class="col-sm-6 title">
-          <% document =  @folder.documents[i.options[:child_index]] %>
-          <%= link_to_document document, document_show_link_field(document) %>
+        <div class="col-sm-6">
+          <div class="title">
+            <% document =  @folder.documents[i.options[:child_index]] %>
+            <%= link_to_document document, document_show_link_field(document) %>
+          </div>
+          <div class="description">
+            <%= i.text_area :description, class: 'form-control' %>
+          </div>
         </div>
         <div class="col-sm-2 title">
           <% options_for_select = options_for_folder_select(without: document) %>
